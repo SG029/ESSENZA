@@ -1,0 +1,99 @@
+/* Importing GT-America fonts from the assets folder */
+@font-face {
+    font-family: 'GT America Standard';
+    src: url('./assets/fonts/GT-America-Standard-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Standard';
+    src: url('./assets/fonts/GT-America-Standard-Medium.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Standard';
+    src: url('./assets/fonts/GT-America-Standard-Medium-Italic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'GT America Mono';
+    src: url('./assets/fonts/GT-America-Mono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Mono';
+    src: url('./assets/fonts/GT-America-Mono-Medium.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Dark';
+    src: url('./assets/fonts/National2Comp-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Page2 Styling */
+#page2 {
+    height: 100vh;
+    width: 100%;
+    background-color: #D6E6FF;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+.bite h1,.good h1,.into h1 {
+    font-family: 'GT America Dark';
+    font-weight: 900;
+    font-style: normal;
+    text-align: center;
+    padding: 20px;
+    font-size: 17rem;
+    position: absolute;
+    color: #009F67;
+}
+
+.bite h1{
+    top:10%;
+    left: 15%;
+}
+.into h1{
+    top:30%;
+    right: 15%;
+}
+.good h1{
+    top:65%;
+    left: 20%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .bite, .into, .good {
+        font-size: 12rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .bite, .into, .good {
+        font-size: 10rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .bite, .into, .good {
+        font-size: 6rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .bite, .into, .good {
+        font-size: 5rem;
+    }
+}
