@@ -1,301 +1,343 @@
-/* Importing GT-America fonts from the assets folder */
-@font-face {
-    font-family: 'GT America Standard';
-    src: url('./assets/fonts/GT-America-Standard-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'GT America Standard';
-    src: url('./assets/fonts/GT-America-Standard-Medium.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'GT America Standard';
-    src: url('./assets/fonts/GT-America-Standard-Medium-Italic.ttf') format('truetype');
-    font-weight: bold;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'GT America Mono';
-    src: url('./assets/fonts/GT-America-Mono-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'GT America Mono';
-    src: url('./assets/fonts/GT-America-Mono-Medium.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'GT America Dark';
-    src: url('./assets/fonts/National2Comp-Black.ttf') format('truetype');
-    font-weight: 900; /* Use a high font-weight value for dark/heavy appearance */
-    font-style: normal;
-}
-
-/* Set GT-America Standard as the main font */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'GT America Standard', sans-serif;
-    color: white;
-}
-
-*::selection {
-    background-color: white;
-    color: #325009;
-}
-
-body::-webkit-scrollbar {
-    display: block;
-    width: 8px;
-    background-color: #95c11e;
-}
-
-/* Header Styling */
-#nav {
-    height: 15vh;
-    width: 100%;
-    background-color: #0F6EFD;
-    display: flex;
-    align-items: center;
-    padding: 0 50px;
-    gap: 50px;
-    justify-content: space-around;
-    position: fixed;
-    z-index: 99;
-    font-style: normal;
-    font-size: 0.9rem;
-    font-family: 'GT America Mono'; /* Inherit from GT America Mono */
-}
-
-/* Navbar Elements */
-#navleft, #navcentre, #navright {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    font-family: inherit; /* Ensures all font-family inheritance */
-    font-weight: inherit;
-}
-
-#nav li {
-    list-style: none;
-    font-family: inherit; /* Ensures font inheritance */
-}
-
-#nav #navright {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-}
-
-/* Join Us Button */
-#nav #joinus {
-    padding: 1rem 3rem; /* Adds spacing inside the button */
-    background-color: white; /* White background */
-    border: none; /* Removes default button border */
-    border-radius: 20px; /* Rounded edges */
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease; /* Smooth transition */
-    font-size: 0.9rem;
-    text-decoration: none; /* Removes underline for links */
-    display: flex; /* Centers the text inside */
-    justify-content: center;
-    align-items: center;
-    font-family: inherit; /* Matches font style with the rest */
-}
-
-#nav #joinus a {
-    color: #0F6EFD; /* Initial blue text color */
-    text-decoration: none; /* Removes underline from the link */
-    font-family: inherit; /* Inherit font from parent (#joinus) */
-    font-weight: inherit; /* Ensures font weight consistency */
-}
-
-#nav #joinus:hover {
-    background-color: #325009; /* Green background on hover */
-    transform: scale(1.05); /* Slightly enlarges the button on hover */
-}
-
-#nav #joinus:hover a {
-    color: white; /* White text on hover */
-    transition: all ease 0.2s;
-}
-
-/* Adjusting the logo size in the navbar */
-#navcentre img {
-    height: 4rem;
-    width: auto;
-    margin-top: 6vh;
-}
-
-/* Hero Section */
-#hero {
-    background-color: #0F6EFD;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Horizontally centers the h1 */
-    align-items: center; /* Vertically centers the h1 */
-    position: relative;
-    overflow: hidden;
-}
-
-#hero h1 {
-    font-family: 'GT America Dark';
-    font-weight: 900; /* Use a high font-weight for heavy appearance */
-    font-style: normal;
-    text-align: center; /* Centers the text inside the h1 */
-    padding: 20px; /* Adds some padding around the text */
-    font-size: 27rem;
-}
-
-#hero img {
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70rem; /* Adjust this value to control the size */
-    height: 90rem; /* Maintains the aspect ratio */
-}
-
-/* Arrow Styling */
-#hero #arrow {
-    height: 100px;
-    width: 100px;
-    background-color: transparent;
-    border: 2px solid #fff;
-    position: absolute;
-    display: flex;
-    left: 5%;
-    bottom: 7%;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: all ease 0.5s;
-}
-
-#hero #arrow i {
-    font-size: 50px;
-    font-weight: 100;
-}
-
-#hero #arrow:hover {
-    scale: 0.6;
-    background-color: #325009;
-}
-
-/* Side Graphic Styling */
-#hero #sidegraphic {
-    position: absolute;
-    top: 65%; /* Center vertically */
-    left: 87%; /* 30% from the left edge to achieve 70% from the right */
-    transform: translateY(-50%); /* Adjust for vertical centering */
-    width: 7rem; /* Control the size */
-    height: auto; /* Maintains aspect ratio */
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 1200px) {
-    #nav {
-        padding: 0 30px;
-        gap: 30px;
+    /* Importing GT-America fonts from the assets folder */
+    @font-face {
+        font-family: 'GT America Standard';
+        src: url('./assets/fonts/GT-America-Standard-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'GT America Standard';
+        src: url('./assets/fonts/GT-America-Standard-Medium.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'GT America Standard';
+        src: url('./assets/fonts/GT-America-Standard-Medium-Italic.ttf') format('truetype');
+        font-weight: bold;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: 'GT America Mono';
+        src: url('./assets/fonts/GT-America-Mono-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'GT America Mono';
+        src: url('./assets/fonts/GT-America-Mono-Medium.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'GT America Dark';
+        src: url('./assets/fonts/National2Comp-Black.ttf') format('truetype');
+        font-weight: 900;
+        font-style: normal;
     }
 
+    /* Set GT-America Standard as the main font */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'GT America Standard', sans-serif;
+        color: white;
+    }
+
+    *::selection {
+        background-color: white;
+        color: #325009;
+    }
+
+    body::-webkit-scrollbar {
+        display: block;
+        width: 8px;
+        background-color: #95c11e;
+    }
+
+    /* Header Styling */
+    #nav {
+        height: 15vh;
+        width: 100%;
+        background-color: #0F6EFD;
+        display: flex;
+        align-items: center;
+        padding: 0 50px;
+        gap: 50px;
+        justify-content: space-around;
+        position: fixed;
+        z-index: 99;
+        font-style: normal;
+        font-size: 0.9rem;
+        font-family: 'GT America Mono';
+    }
+
+    /* Navbar Elements */
+    #navleft, #navcentre, #navright {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        font-family: inherit;
+    }
+
+    #nav li {
+        list-style: none;
+    }
+
+    /* Navbar links */
+    #nav li a {
+        text-decoration: none; /* Removes underline */
+        font-family: inherit; /* Ensures same font as 'JOIN US' */
+        font-weight: inherit;
+        color: white;
+        transition: all 0.3s ease; /* Smooth transition */
+    }
+
+    /* Hover effect for navbar links */
+    #nav li a:hover {
+        color: #325009;
+        transition: all 0.2s ease;
+    }
+
+    /* Join Us Button */
+    #nav #joinus {
+        padding: 1rem 3rem;
+        background-color: white;
+        border: none;
+        border-radius: 20px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: inherit;
+    }
+
+    #nav #joinus a {
+        color: #0F6EFD;
+        text-decoration: none;
+        font-family: inherit;
+        font-weight: inherit;
+    }
+
+    #nav #joinus:hover {
+        background-color: #325009;
+        transform: scale(1.05);
+    }
+
+    #nav #joinus:hover a {
+        color: white;
+        transition: all ease 0.2s;
+    }
+
+    /* Adjusting the logo size in the navbar */
     #navcentre img {
-        height: 3rem;
+        height: 4rem;
+        width: auto;
+        margin-top: 6vh;
+    }
+
+    /* Hero Section */
+    #hero {
+        background-color: #0F6EFD;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
     }
 
     #hero h1 {
-        font-size: 15rem; /* Adjust font size for smaller screens */
+        font-family: 'GT America Dark';
+        font-weight: 900;
+        font-style: normal;
+        text-align: center;
+        padding: 20px;
+        font-size: 27rem;
     }
 
     #hero img {
-        width: 50rem; /* Adjust image size */
-        height: 60rem; /* Adjust height */
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70rem;
+        height: 90rem;
     }
 
+    /* Arrow Styling */
+    #hero #arrow {
+        height: 100px;
+        width: 100px;
+        background-color: transparent;
+        border: 2px solid #fff;
+        position: absolute;
+        display: flex;
+        left: 5%;
+        bottom: 7%;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all ease 0.5s;
+    }
+
+    #hero #arrow i {
+        font-size: 50px;
+        font-weight: 100;
+    }
+
+    #hero #arrow:hover {
+        scale: 0.6;
+        background-color: #325009;
+    }
+
+    /* Side Graphic Styling */
     #hero #sidegraphic {
-        width: 5rem; /* Adjust size for smaller screens */
-    }
-}
-
-@media (max-width: 992px) {
-    #nav {
-        padding: 0 20px;
-        gap: 20px;
+        position: absolute;
+        top: 65%;
+        left: 87%;
+        transform: translateY(-50%);
+        width: 7rem;
+        height: auto;
     }
 
-    #navcentre img {
-        height: 2.5rem;
+    /* Discover Now Button */
+    #hero #discover {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 1rem 3rem;
+        background-color: white;
+        border: none;
+        border-radius: 20px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: inherit; /* Matches font style with 'JOIN US' */
     }
 
-    #hero h1 {
-        font-size: 10rem; /* Further adjust for medium screens */
+    #hero #discover a {
+        color: #0F6EFD;
+        text-decoration: none;
+        font-family: inherit;
     }
 
-    #hero img {
-        width: 40rem; /* Adjust image size */
-        height: 50rem; /* Adjust height */
+    #hero #discover:hover {
+        background-color: #325009;
     }
 
-    #hero #sidegraphic {
-        width: 4rem; /* Adjust size for smaller screens */
-    }
-}
-
-@media (max-width: 768px) {
-    #nav {
-        flex-direction: column;
-        padding: 10px;
-        gap: 10px;
+    #hero #discover:hover a {
+        color: white;
+        transition: all ease 0.2s;
     }
 
-    #navcentre img {
-        height: 2rem;
+    /* Media Queries for Responsiveness */
+    @media (max-width: 1200px) {
+        #nav {
+            padding: 0 30px;
+            gap: 30px;
+        }
+
+        #navcentre img {
+            height: 3rem;
+        }
+
+        #hero h1 {
+            font-size: 15rem;
+        }
+
+        #hero img {
+            width: 50rem;
+            height: 60rem;
+        }
+
+        #hero #sidegraphic {
+            width: 5rem;
+        }
     }
 
-    #hero h1 {
-        font-size: 6rem; /* Adjust font size for small screens */
+    @media (max-width: 992px) {
+        #nav {
+            padding: 0 20px;
+            gap: 20px;
+        }
+
+        #navcentre img {
+            height: 2.5rem;
+        }
+
+        #hero h1 {
+            font-size: 10rem;
+        }
+
+        #hero img {
+            width: 40rem;
+            height: 50rem;
+        }
+
+        #hero #sidegraphic {
+            width: 4rem;
+        }
     }
 
-    #hero img {
-        width: 30rem; /* Adjust image size */
-        height: 40rem; /* Adjust height */
+    @media (max-width: 768px) {
+        #nav {
+            flex-direction: column;
+            padding: 10px;
+            gap: 10px;
+        }
+
+        #navcentre img {
+            height: 2rem;
+        }
+
+        #hero h1 {
+            font-size: 6rem;
+        }
+
+        #hero img {
+            width: 30rem;
+            height: 40rem;
+        }
+
+        #hero #sidegraphic {
+            width: 3rem;
+        }
     }
 
-    #hero #sidegraphic {
-        width: 3rem; /* Adjust size for smaller screens */
-    }
-}
+    @media (max-width: 576px) {
+        #nav {
+            padding: 10px;
+            gap: 10px;
+        }
 
-@media (max-width: 576px) {
-    #nav {
-        padding: 10px;
-        gap: 10px;
-    }
+        #navcentre img {
+            height: 2rem;
+        }
 
-    #navcentre img {
-        height: 2rem;
-    }
+        #hero h1 {
+            font-size: 5rem;
+        }
 
-    #hero h1 {
-        font-size: 5rem; /* Further adjust font size for small screens */
-    }
+        #hero img {
+            width: 25rem;
+            height: 35rem;
+        }
 
-    #hero img {
-        width: 25rem; /* Adjust image size */
-        height: 35rem; /* Adjust height */
+        #hero #sidegraphic {
+            width: 2.5rem;
+        }
     }
-
-    #hero #sidegraphic {
-        width: 2.5rem; /* Adjust size for smaller screens */
-    }
-}
