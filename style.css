@@ -1,343 +1,343 @@
-    /* Importing GT-America fonts from the assets folder */
-    @font-face {
-        font-family: 'GT America Standard';
-        src: url('./assets/fonts/GT-America-Standard-Regular.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: 'GT America Standard';
-        src: url('./assets/fonts/GT-America-Standard-Medium.ttf') format('truetype');
-        font-weight: bold;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: 'GT America Standard';
-        src: url('./assets/fonts/GT-America-Standard-Medium-Italic.ttf') format('truetype');
-        font-weight: bold;
-        font-style: italic;
-    }
-    @font-face {
-        font-family: 'GT America Mono';
-        src: url('./assets/fonts/GT-America-Mono-Regular.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: 'GT America Mono';
-        src: url('./assets/fonts/GT-America-Mono-Medium.ttf') format('truetype');
-        font-weight: bold;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: 'GT America Dark';
-        src: url('./assets/fonts/National2Comp-Black.ttf') format('truetype');
-        font-weight: 900;
-        font-style: normal;
-    }
+/* Importing GT-America fonts from the assets folder */
+@font-face {
+    font-family: 'GT America Standard';
+    src: url('./assets/fonts/GT-America-Standard-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Standard';
+    src: url('./assets/fonts/GT-America-Standard-Medium.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Standard';
+    src: url('./assets/fonts/GT-America-Standard-Medium-Italic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'GT America Mono';
+    src: url('./assets/fonts/GT-America-Mono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Mono';
+    src: url('./assets/fonts/GT-America-Mono-Medium.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Dark';
+    src: url('./assets/fonts/National2Comp-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
 
-    /* Set GT-America Standard as the main font */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'GT America Standard', sans-serif;
-        color: white;
-    }
+/* Set GT-America Standard as the main font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'GT America Standard', sans-serif;
+    color: white;
+}
 
-    *::selection {
-        background-color: white;
-        color: #325009;
-    }
+*::selection {
+    background-color: white;
+    color: #325009;
+}
 
-    body::-webkit-scrollbar {
-        display: block;
-        width: 8px;
-        background-color: #95c11e;
-    }
+body::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    background-color: #95c11e;
+}
 
-    /* Header Styling */
+/* Header Styling */
+#nav {
+    height: 15vh;
+    width: 100%;
+    background-color: #0F6EFD;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    gap: 50px;
+    justify-content: space-around;
+    position: fixed;
+    z-index: 99;
+    font-style: normal;
+    font-size: 0.9rem;
+    font-family: 'GT America Mono';
+}
+
+/* Navbar Elements */
+#navleft, #navcentre, #navright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    font-family: inherit;
+}
+
+#nav li {
+    list-style: none;
+}
+
+/* Navbar links */
+#nav li a {
+    text-decoration: none; /* Removes underline */
+    font-family: inherit; /* Ensures same font as 'JOIN US' */
+    font-weight: inherit;
+    color: white;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for navbar links */
+#nav li a:hover {
+    color: #325009;
+    transition: all 0.2s ease;
+}
+
+/* Join Us Button */
+#nav #joinus {
+    padding: 1rem 3rem;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+}
+
+#nav #joinus a {
+    color: #0F6EFD;
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+#nav #joinus:hover {
+    background-color: #325009;
+    transform: scale(1.05);
+}
+
+#nav #joinus:hover a {
+    color: white;
+    transition: all ease 0.2s;
+}
+
+/* Adjusting the logo size in the navbar */
+#navcentre img {
+    height: 4rem;
+    width: auto;
+    margin-top: 6vh;
+}
+
+/* Hero Section */
+#hero {
+    background-color: #0F6EFD;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#hero h1 {
+    font-family: 'GT America Dark';
+    font-weight: 900;
+    font-style: normal;
+    text-align: center;
+    padding: 20px;
+    font-size: 27rem;
+}
+
+#hero img {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70rem;
+    height: 90rem;
+}
+
+/* Arrow Styling */
+#hero #arrow {
+    height: 100px;
+    width: 100px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    position: absolute;
+    display: flex;
+    left: 5%;
+    bottom: 7%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all ease 0.5s;
+}
+
+#hero #arrow i {
+    font-size: 50px;
+    font-weight: 100;
+}
+
+#hero #arrow:hover {
+    scale: 0.6;
+    background-color: #325009;
+}
+
+/* Side Graphic Styling */
+#hero #sidegraphic {
+    position: absolute;
+    top: 65%;
+    left: 87%;
+    transform: translateY(-50%);
+    width: 7rem;
+    height: auto;
+}
+
+/* Discover Now Button */
+#hero #discover {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 3rem;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit; /* Matches font style with 'JOIN US' */
+}
+
+#hero #discover a {
+    color: #0F6EFD;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+#hero #discover:hover {
+    background-color: #325009;
+}
+
+#hero #discover:hover a {
+    color: white;
+    transition: all ease 0.2s;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
     #nav {
-        height: 15vh;
-        width: 100%;
-        background-color: #0F6EFD;
-        display: flex;
-        align-items: center;
-        padding: 0 50px;
-        gap: 50px;
-        justify-content: space-around;
-        position: fixed;
-        z-index: 99;
-        font-style: normal;
-        font-size: 0.9rem;
-        font-family: 'GT America Mono';
+        padding: 0 30px;
+        gap: 30px;
     }
 
-    /* Navbar Elements */
-    #navleft, #navcentre, #navright {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
-        font-family: inherit;
-    }
-
-    #nav li {
-        list-style: none;
-    }
-
-    /* Navbar links */
-    #nav li a {
-        text-decoration: none; /* Removes underline */
-        font-family: inherit; /* Ensures same font as 'JOIN US' */
-        font-weight: inherit;
-        color: white;
-        transition: all 0.3s ease; /* Smooth transition */
-    }
-
-    /* Hover effect for navbar links */
-    #nav li a:hover {
-        color: #325009;
-        transition: all 0.2s ease;
-    }
-
-    /* Join Us Button */
-    #nav #joinus {
-        padding: 1rem 3rem;
-        background-color: white;
-        border: none;
-        border-radius: 20px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-size: 0.9rem;
-        text-decoration: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: inherit;
-    }
-
-    #nav #joinus a {
-        color: #0F6EFD;
-        text-decoration: none;
-        font-family: inherit;
-        font-weight: inherit;
-    }
-
-    #nav #joinus:hover {
-        background-color: #325009;
-        transform: scale(1.05);
-    }
-
-    #nav #joinus:hover a {
-        color: white;
-        transition: all ease 0.2s;
-    }
-
-    /* Adjusting the logo size in the navbar */
     #navcentre img {
-        height: 4rem;
-        width: auto;
-        margin-top: 6vh;
-    }
-
-    /* Hero Section */
-    #hero {
-        background-color: #0F6EFD;
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
+        height: 3rem;
     }
 
     #hero h1 {
-        font-family: 'GT America Dark';
-        font-weight: 900;
-        font-style: normal;
-        text-align: center;
-        padding: 20px;
-        font-size: 27rem;
+        font-size: 15rem;
     }
 
     #hero img {
-        position: absolute;
-        top: 5%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 70rem;
-        height: 90rem;
+        width: 50rem;
+        height: 60rem;
     }
 
-    /* Arrow Styling */
-    #hero #arrow {
-        height: 100px;
-        width: 100px;
-        background-color: transparent;
-        border: 2px solid #fff;
-        position: absolute;
-        display: flex;
-        left: 5%;
-        bottom: 7%;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        transition: all ease 0.5s;
-    }
-
-    #hero #arrow i {
-        font-size: 50px;
-        font-weight: 100;
-    }
-
-    #hero #arrow:hover {
-        scale: 0.6;
-        background-color: #325009;
-    }
-
-    /* Side Graphic Styling */
     #hero #sidegraphic {
-        position: absolute;
-        top: 65%;
-        left: 87%;
-        transform: translateY(-50%);
-        width: 7rem;
-        height: auto;
+        width: 5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    #nav {
+        padding: 0 20px;
+        gap: 20px;
     }
 
-    /* Discover Now Button */
-    #hero #discover {
-        position: absolute;
-        bottom: 5%;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 1rem 3rem;
-        background-color: white;
-        border: none;
-        border-radius: 20px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-size: 0.9rem;
-        text-decoration: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: inherit; /* Matches font style with 'JOIN US' */
+    #navcentre img {
+        height: 2.5rem;
     }
 
-    #hero #discover a {
-        color: #0F6EFD;
-        text-decoration: none;
-        font-family: inherit;
+    #hero h1 {
+        font-size: 10rem;
     }
 
-    #hero #discover:hover {
-        background-color: #325009;
+    #hero img {
+        width: 40rem;
+        height: 50rem;
     }
 
-    #hero #discover:hover a {
-        color: white;
-        transition: all ease 0.2s;
+    #hero #sidegraphic {
+        width: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #nav {
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
     }
 
-    /* Media Queries for Responsiveness */
-    @media (max-width: 1200px) {
-        #nav {
-            padding: 0 30px;
-            gap: 30px;
-        }
-
-        #navcentre img {
-            height: 3rem;
-        }
-
-        #hero h1 {
-            font-size: 15rem;
-        }
-
-        #hero img {
-            width: 50rem;
-            height: 60rem;
-        }
-
-        #hero #sidegraphic {
-            width: 5rem;
-        }
+    #navcentre img {
+        height: 2rem;
     }
 
-    @media (max-width: 992px) {
-        #nav {
-            padding: 0 20px;
-            gap: 20px;
-        }
-
-        #navcentre img {
-            height: 2.5rem;
-        }
-
-        #hero h1 {
-            font-size: 10rem;
-        }
-
-        #hero img {
-            width: 40rem;
-            height: 50rem;
-        }
-
-        #hero #sidegraphic {
-            width: 4rem;
-        }
+    #hero h1 {
+        font-size: 6rem;
     }
 
-    @media (max-width: 768px) {
-        #nav {
-            flex-direction: column;
-            padding: 10px;
-            gap: 10px;
-        }
-
-        #navcentre img {
-            height: 2rem;
-        }
-
-        #hero h1 {
-            font-size: 6rem;
-        }
-
-        #hero img {
-            width: 30rem;
-            height: 40rem;
-        }
-
-        #hero #sidegraphic {
-            width: 3rem;
-        }
+    #hero img {
+        width: 30rem;
+        height: 40rem;
     }
 
-    @media (max-width: 576px) {
-        #nav {
-            padding: 10px;
-            gap: 10px;
-        }
-
-        #navcentre img {
-            height: 2rem;
-        }
-
-        #hero h1 {
-            font-size: 5rem;
-        }
-
-        #hero img {
-            width: 25rem;
-            height: 35rem;
-        }
-
-        #hero #sidegraphic {
-            width: 2.5rem;
-        }
+    #hero #sidegraphic {
+        width: 3rem;
     }
+}
+
+@media (max-width: 576px) {
+    #nav {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    #navcentre img {
+        height: 2rem;
+    }
+
+    #hero h1 {
+        font-size: 5rem;
+    }
+
+    #hero img {
+        width: 25rem;
+        height: 35rem;
+    }
+
+    #hero #sidegraphic {
+        width: 2.5rem;
+    }
+}
