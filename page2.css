@@ -57,7 +57,7 @@
     padding: 20px;
     font-size: 17rem;
     position: absolute;
-    color: #009F67;
+    color: #8BAD19;
 }
 
 .bite h1{
@@ -72,6 +72,15 @@
     top:65%;
     left: 20%;
 }
+#page2 img {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50rem;
+    height: auto;
+}
+
 
 /* Responsive Adjustments */
 @media (max-width: 1200px) {

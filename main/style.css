@@ -1,0 +1,182 @@
+/* Importing GT-America fonts from the assets folder */
+@font-face {
+    font-family: 'GT America Standard';
+    src: url('/assets/fonts/GT-America-Standard-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Standard';
+    src: url('/assets/fonts/GT-America-Standard-Medium.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Standard';
+    src: url('/assets/fonts/GT-America-Standard-Medium-Italic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'GT America Mono';
+    src: url('/assets/fonts/GT-America-Mono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Mono';
+    src: url('/assets/fonts/GT-America-Mono-Medium.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Dark';
+    src: url('./National2Comp-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Set GT-America Standard as the main font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'GT America Standard', sans-serif;
+    color: white;
+}
+
+*::selection {
+    background-color: white;
+    color: #325009;
+}
+
+body::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    background-color: #95c11e;
+}
+
+/* Header Styling */
+#nav {
+    height: 15vh;
+    width: 100%;
+    background-color: #F1F9DC;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Center-align the entire navbar */
+    gap: 50px;
+    z-index: 99;
+    font-style: normal;
+    font-size: 0.9rem;
+    font-family: 'GT America Mono';
+}
+
+#navleft, #navcentre, #navright {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    font-family: inherit;
+}
+
+#nav li {
+    list-style: none;
+}
+
+#nav li a {
+    text-decoration: none; /* Removes underline */
+    font-family: inherit; /* Ensures same font as 'JOIN US' */
+    font-weight: 500;
+    color: #738F77;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for navbar links */
+#nav li a:hover {
+    color: #325009;
+    transition: all 0.2s ease;
+}
+
+/* Join Us Button */
+#nav #joinus {
+    padding: 1rem 3rem;
+    background-color: #0D3A25;
+    border: none;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+}
+
+#nav #joinus a {
+    color: white;
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+#nav #joinus:hover {
+    background-color: #325009;
+}
+
+#nav #joinus:hover a {
+    color: white;
+    transition: all ease 0.2s;
+}
+
+/* Adjusting the logo size in the navbar */
+#navcentre img {
+    height: 4rem;
+    width: auto;
+    position: absolute;
+    transform: translateX(-20%);
+}
+
+#hero {
+    background-color: #F1F9DC;
+    height: 85vh;
+    width: 100%;
+    position: relative;
+    display: flex;              /* Added flex display */
+    justify-content: center;    /* Centers horizontally */
+    align-items: center;        /* Centers vertically */
+}
+
+#hero .bg {
+    /* background-color: red; */
+    width: 80%;
+    height: 100%;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;                   /* Place in the middle */
+    left: 50%;                  /* Place in the middle */
+    transform: translate(-50%, -50%); /* Correct the offset to perfectly center */
+    background-image: url('./bgdish.jpg'); /* Replace 'your-image-file.png' with your image */
+    background-size: cover;     /* Make sure the image covers the entire div */
+    background-position: center;/* Centers the image */
+    background-repeat: no-repeat;
+}
+
+.dishoftheday{
+    width: 38%;
+    height: 55vh;
+    background-color: #0D3A25;
+    position: absolute;
+    border-radius: 10px;
+    left: 11%;
+    bottom: 2%;
+}
+
+.dishoftheday h1{
+    font-family: 'GT America Dark';
+    font-weight: 900;
+    font-style: normal;
+    text-align: center;
+    padding: 20px;
+    font-size: 5rem;
+}
