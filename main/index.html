@@ -3,33 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Recipe of the Day</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-    <div>
-        <div id="nav">
-            <div id="navleft">
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">ABOUT US</a></li>
-            </div>
-            <div id="navcentre">
-                <img src="./logo.png" alt="Logo">
-            </div>
-            <div id="navright">
-                <li><a href="#">STORIES</a></li>
-                <div id="joinus">
-                    <a id="joinli" href="#">JOIN US</a>
-                </div>
-            </div>
+<div>
+    <div id="nav">
+        <div id="navleft">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT US</a></li>
         </div>
-        <div id="hero">
-            <div class="bg"></div>
-            <div class="dishoftheday">
-                <h1>Recipe of the Day</h1>
+        <div id="navcentre">
+            <img src="./logo.png" alt="Logo">
+        </div>
+        <div id="navright">
+            <li><a href="#">STORIES</a></li>
+            <div id="joinus">
+                <a id="joinli" href="#">JOIN US</a>
             </div>
         </div>
     </div>
+    <div id="hero">
+        <div class="bg"></div>
+        <div class="dishoftheday">
+            <h1>Recipe of the Day</h1>
+            <div class="apiwalidiv"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Fetch Recipe of the Day
+    async function fetchRecipeOfTheDay() {
+        const apiUrl = 'https://cosylab.iiitd.edu.in/recipe/recipeOftheDay';
+        try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+                throw new Error('Failed to fetch the recipe of the day.');
+            }
+            const data = await response.json();
+            const recipe = data.payload;
+
+            // Populate the Recipe of the Day section
+            const apiwalidiv = document.querySelector('.apiwalidiv');
+            apiwalidiv.innerHTML = `
+                    <h2>${recipe.Recipe_title}</h2>
+                    <p><strong>Region:</strong> ${recipe.Region}</p>
+                    <p><strong>Sub-region:</strong> ${recipe.Sub_region}</p>
+                    <p><strong>Calories:</strong> ${recipe.Calories} kcal</p>
+                    <p><strong>Total Time:</strong> ${recipe.total_time} minutes</p>
+                    <p><a href="${recipe.url}" target="_blank" style="color: blue; text-decoration: underline;">View Full Recipe</a></p>
+                `;
+        } catch (error) {
+            console.error('Error:', error);
+            const apiwalidiv = document.querySelector('.apiwalidiv');
+            apiwalidiv.innerHTML = `<p style="color: red;">Failed to load the recipe of the day. Please try again later.</p>`;
+        }
+    }
+
+    // Call the function on page load
+    fetchRecipeOfTheDay();
+</script>
 </body>
 </html>
