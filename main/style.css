@@ -1,13 +1,13 @@
 /* Importing GT-America fonts from the assets folder */
 @font-face {
     font-family: 'GT America Standard';
-    src: url('/assets/fonts/GT-America-Standard-Regular.ttf') format('truetype');
+    src: url('./GT-America-Standard-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'GT America Standard';
-    src: url('/assets/fonts/GT-America-Standard-Medium.ttf') format('truetype');
+    src: url('./GT-America-Standard-Medium.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
@@ -41,10 +41,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'GT America Standard', sans-serif;
-    color: white;
+    font-family: 'GT America Standard';
+    color: #F1F9DC;
 }
-
+#main {
+    background-color: #F1F9DC;
+}
 *::selection {
     background-color: white;
     color: #325009;
@@ -63,7 +65,7 @@ body::-webkit-scrollbar {
     background-color: #F1F9DC;
     display: flex;
     align-items: center;
-    justify-content: space-around; /* Center-align the entire navbar */
+    justify-content: space-around;
     gap: 50px;
     z-index: 99;
     font-style: normal;
@@ -83,20 +85,18 @@ body::-webkit-scrollbar {
 }
 
 #nav li a {
-    text-decoration: none; /* Removes underline */
-    font-family: inherit; /* Ensures same font as 'JOIN US' */
+    text-decoration: none;
+    font-family: inherit;
     font-weight: 500;
     color: #738F77;
-    transition: all 0.3s ease; /* Smooth transition */
+    transition: all 0.3s ease;
 }
 
-/* Hover effect for navbar links */
 #nav li a:hover {
     color: #325009;
     transition: all 0.2s ease;
 }
 
-/* Join Us Button */
 #nav #joinus {
     padding: 1rem 3rem;
     background-color: #0D3A25;
@@ -129,7 +129,6 @@ body::-webkit-scrollbar {
     transition: all ease 0.2s;
 }
 
-/* Adjusting the logo size in the navbar */
 #navcentre img {
     height: 4rem;
     width: auto;
@@ -142,27 +141,27 @@ body::-webkit-scrollbar {
     height: 85vh;
     width: 100%;
     position: relative;
-    display: flex;              /* Added flex display */
-    justify-content: center;    /* Centers horizontally */
-    align-items: center;        /* Centers vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
 }
 
 #hero .bg {
-    /* background-color: red; */
     width: 80%;
     height: 100%;
     border-radius: 10px;
     position: absolute;
-    top: 50%;                   /* Place in the middle */
-    left: 50%;                  /* Place in the middle */
-    transform: translate(-50%, -50%); /* Correct the offset to perfectly center */
-    background-image: url('./bgdish.jpg'); /* Replace 'your-image-file.png' with your image */
-    background-size: cover;     /* Make sure the image covers the entire div */
-    background-position: center;/* Centers the image */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('./bgdish.jpg');
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
-.dishoftheday{
+.dishoftheday {
     width: 38%;
     height: 55vh;
     background-color: #0D3A25;
@@ -172,11 +171,109 @@ body::-webkit-scrollbar {
     bottom: 2%;
 }
 
-.dishoftheday h1{
+.dishoftheday h1 {
     font-family: 'GT America Dark';
     font-weight: 900;
     font-style: normal;
     text-align: center;
     padding: 20px;
     font-size: 5rem;
+}
+
+.dishoftheday .apiwalidiv {
+    font-family: 'GT America Standard';
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.page2 {
+    width: 100%;
+    height: 60vh;
+    background-color: #F1F9DC;
+    margin: 0;
+    position: relative;
+}
+
+/* Search Bar and Buttons Styling */
+.search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    top: 20%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 0.8rem 2.5rem 0.8rem 0.8rem; /* Add padding to accommodate the icon */
+    font-size: 0.9rem; /* Reduced font size */
+    border: 2px solid #738F77;
+    border-radius: 10px;
+    outline: none;
+    color: #0D3A25;
+    background-color: #F1F9DC;
+    font-style: normal;
+    font-size: 0.9rem;
+    font-family: 'GT America Mono';
+    width: 30vw;
+}
+
+.search-icon {
+    position: absolute;
+    right: 0.8rem; 
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+    color: #0D3A25;
+    font-style: normal;
+    font-size: 0.9rem;
+    font-family: 'GT America Mono';   
+}
+
+
+
+.search-icon:hover {
+    color: #325009;
+}
+
+.search-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #0D3A25;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-style: normal;
+    font-size: 0.9rem;
+    font-family: 'GT America Mono';
+}
+
+.search-button:hover {
+    background-color: #325009;
 }
