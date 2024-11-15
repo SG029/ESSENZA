@@ -1,60 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Existing head content -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe of the Day</title>
+    <!-- Include your external CSS file -->
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-        rel="stylesheet"
-    />
+    <!-- Include additional CSS styles -->
 </head>
 <body>
 <div>
-    <div id="nav">
-        <div id="navleft">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">ABOUT US</a></li>
-        </div>
-        <div id="navcentre">
-            <img src="./logo.png" alt="Logo">
-        </div>
-        <div id="navright">
-            <li><a href="#">STORIES</a></li>
-            <div id="joinus">
-                <a id="joinli" href="#">JOIN US</a>
+    <div>
+        <div id="nav">
+            <div id="navleft">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT US</a></li>
             </div>
-        </div>
-    </div>
-    <div id="main">
-        <div id="hero">
-            <div class="bg"></div>
-            <div class="dishoftheday">
-                <h1>Recipe of the Day</h1>
-                <div class="apiwalidiv"></div>
+            <div id="navcentre">
+                <img src="./logo.png" alt="Logo">
             </div>
-        </div>
-        <div class="page2">
-            <div class="search-container">
-                <div class="search-box">
-                    <input type="text" class="search-bar" placeholder="SEARCH">
-                    <button class="search-icon">
-                        <!-- <i class="ri-search-line"></i> -->
-                         <p style="color: #0D3A25;">SEARCH</p>
-                    </button>
+            <div id="navright">
+                <li><a href="#">STORIES</a></li>
+                <div id="joinus">
+                    <a id="joinli" href="#">JOIN US</a>
                 </div>
-                <button class="search-button">Recipe</button>
-                <button class="search-button">Region</button>
-                <button class="search-button">Ingredients</button>
             </div>
-            
-            
+        </div>
+        <div id="main">
+            <div id="hero">
+                <div class="bg"></div>
+                <div class="dishoftheday">
+                    <h1>Recipe of the Day</h1>
+                    <div class="apiwalidiv">
+                        <!-- Recipe of the Day content will be inserted here -->
+                    </div>
+                </div>
+            </div>
+            <div class="page2">
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" class="search-bar" id="searchInput" placeholder="SEARCH">
+                        <button class="search-icon" onclick="searchRecipes()">
+                            <!-- <i class="ri-search-line"></i> -->
+                            <p style="color: #0D3A25;">SEARCH</p>
+                        </button>
+                    </div>
+                    <div class="search-buttons">
+                        <button class="search-button" onclick="searchRecipes()">Recipe</button>
+                        <button class="search-button" onclick="searchRegions()">Region</button>
+                        <button class="search-button" onclick="searchIngredients()">Ingredients</button>
+                    </div>
+                </div>
+                <div id="results"></div>
+            </div>
         </div>
     </div>
-</div>
-
 <script>
     // Fetch Recipe of the Day
     async function fetchRecipeOfTheDay() {
@@ -69,14 +70,15 @@
 
             // Populate the Recipe of the Day section
             const apiwalidiv = document.querySelector('.apiwalidiv');
+            const encodedUrl = encodeURIComponent(recipe.url);
             apiwalidiv.innerHTML = `
-                    <h2>${recipe.Recipe_title}</h2>
-                    <p><strong>Region:</strong> ${recipe.Region}</p>
-                    <p><strong>Sub-region:</strong> ${recipe.Sub_region}</p>
-                    <p><strong>Calories:</strong> ${recipe.Calories} kcal</p>
-                    <p><strong>Total Time:</strong> ${recipe.total_time} minutes</p>
-                    <p><a href="${recipe.url}" target="_blank" style="color: blue; text-decoration: underline;">View Full Recipe</a></p>
-                `;
+                <h2>${recipe.Recipe_title}</h2>
+                <p><strong>Region:</strong> ${recipe.Region}</p>
+                <p><strong>Sub-region:</strong> ${recipe.Sub_region}</p>
+                <p><strong>Calories:</strong> ${recipe.Calories} kcal</p>
+                <p><strong>Total Time:</strong> ${recipe.total_time} minutes</p>
+                <a href="buffer.html?url=${encodedUrl}" class="view-recipe-button">View Full Recipe</a>
+            `;
         } catch (error) {
             console.error('Error:', error);
             const apiwalidiv = document.querySelector('.apiwalidiv');
@@ -86,6 +88,112 @@
 
     // Call the function on page load
     fetchRecipeOfTheDay();
+
+    // Search Functionality
+    function searchIngredients() {
+        const searchText = document.getElementById('searchInput').value.trim();
+        if (!searchText) {
+            alert('Please enter a search term.');
+            return;
+        }
+        const pageSize = 10;
+        const url = `https://cosylab.iiitd.edu.in/recipe-search/ingredients?searchText=${encodeURIComponent(searchText)}&pageSize=${pageSize}`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                displayResults(data.payload.data, 'ingredients');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error fetching ingredients data. See console for details.');
+            });
+    }
+
+    function searchRegions() {
+        const searchText = document.getElementById('searchInput').value.trim();
+        if (!searchText) {
+            alert('Please enter a search term.');
+            return;
+        }
+        const pageSize = 10;
+        const url = `https://cosylab.iiitd.edu.in/recipe-search/regions?searchText=${encodeURIComponent(searchText)}&pageSize=${pageSize}`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data.success === "true") {
+                    displayResults(data.payload.data, 'regions');
+                } else {
+                    alert('No data found for the given region.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error fetching regions data. See console for details.');
+            });
+    }
+
+    function searchRecipes() {
+        const searchText = document.getElementById('searchInput').value.trim();
+        if (!searchText) {
+            alert('Please enter a search term.');
+            return;
+        }
+        const pageSize = 10;
+        const url = `https://cosylab.iiitd.edu.in/recipe-search/recipe?pageSize=${pageSize}&searchText=${encodeURIComponent(searchText)}`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                displayResults(data.payload.data, 'recipes');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error fetching recipes data. See console for details.');
+            });
+    }
+
+    function displayResults(results, type) {
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = ''; // Clear previous results
+
+        if (!results || results.length === 0) {
+            resultsDiv.innerHTML = '<p>No results found.</p>';
+            return;
+        }
+
+        results.forEach(item => {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'result-item';
+
+            if (type === 'ingredients') {
+                itemDiv.innerHTML = `
+                    <div class="result-text">
+                        <h3>Recipe No: ${item.recipe_no}</h3>
+                        <p><strong>Ingredient Phrase:</strong> ${item.ingredient_Phrase}</p>
+                        <p><strong>Ingredient:</strong> ${item.ingredient}</p>
+                        <p><strong>Quantity:</strong> ${item.quantity || ''} ${item.unit || ''}</p>
+                    </div>
+                `;
+            } else if (type === 'recipes' || type === 'regions') {
+                const encodedUrl = encodeURIComponent(item.url);
+                itemDiv.innerHTML = `
+                    ${item.img_url ? `<img src="${item.img_url}" alt="Recipe Image">` : ''}
+                    <div class="result-text">
+                        <h3>${item.Recipe_title}</h3>
+                        <p><strong>Region:</strong> ${item.Region}</p>
+                        <p><strong>Sub-region:</strong> ${item.Sub_region}</p>
+                        <p><strong>Calories:</strong> ${item.Calories} kcal</p>
+                        <p><strong>Total Time:</strong> ${item.total_time} minutes</p>
+                        <a href="buffer.html?url=${encodedUrl}" class="view-recipe-button">View Full Recipe</a>
+                    </div>
+                `;
+            }
+            resultsDiv.appendChild(itemDiv);
+        });
+    }
 </script>
 </body>
 </html>
+

@@ -223,7 +223,7 @@ body::-webkit-scrollbar {
 .search-bar {
     width: 100%;
     padding: 0.8rem 2.5rem 0.8rem 0.8rem; /* Add padding to accommodate the icon */
-    font-size: 0.9rem; /* Reduced font size */
+    font-size: 0.9rem;
     border: 2px solid #738F77;
     border-radius: 10px;
     outline: none;
@@ -276,4 +276,368 @@ body::-webkit-scrollbar {
 
 .search-button:hover {
     background-color: #325009;
+}
+
+@font-face {
+    font-family: 'GT America Standard';
+    src: url('./GT-America-Standard-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Standard';
+    src: url('./GT-America-Standard-Medium.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Standard';
+    src: url('/assets/fonts/GT-America-Standard-Medium-Italic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'GT America Mono';
+    src: url('/assets/fonts/GT-America-Mono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Mono';
+    src: url('/assets/fonts/GT-America-Mono-Medium.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Dark';
+    src: url('./National2Comp-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Set GT-America Standard as the main font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'GT America Standard';
+    color: #F1F9DC;
+}
+#main {
+    background-color: #F1F9DC;
+}
+*::selection {
+    background-color: white;
+    color: #325009;
+}
+
+body::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    background-color: #95c11e;
+}
+
+/* Header Styling */
+#nav {
+    height: 15vh;
+    width: 100%;
+    background-color: #F1F9DC;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 50px;
+    z-index: 99;
+    font-style: normal;
+    font-size: 0.9rem;
+    font-family: 'GT America Mono';
+}
+
+#navleft, #navcentre, #navright {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    font-family: inherit;
+}
+
+#nav li {
+    list-style: none;
+}
+
+#nav li a {
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: 500;
+    color: #738F77;
+    transition: all 0.3s ease;
+}
+
+#nav li a:hover {
+    color: #325009;
+    transition: all 0.2s ease;
+}
+
+#nav #joinus {
+    padding: 1rem 3rem;
+    background-color: #0D3A25;
+    border: none;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+}
+
+#nav #joinus a {
+    color: white;
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+#nav #joinus:hover {
+    background-color: #325009;
+}
+
+#nav #joinus:hover a {
+    color: white;
+    transition: all ease 0.2s;
+}
+
+#navcentre img {
+    height: 4rem;
+    width: auto;
+    position: absolute;
+    transform: translateX(-20%);
+}
+
+#hero {
+    background-color: #F1F9DC;
+    height: 85vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+#hero .bg {
+    width: 80%;
+    height: 100%;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('./bgdish.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dishoftheday {
+    width: 38%;
+    height: 55vh;
+    background-color: #0D3A25;
+    position: absolute;
+    border-radius: 10px;
+    left: 11%;
+    bottom: 2%;
+    padding: 20px;
+    color: #ffffff;
+}
+
+.dishoftheday h1 {
+    font-family: 'GT America Dark';
+    font-weight: 900;
+    font-style: normal;
+    text-align: center;
+    font-size: 5rem;
+}
+
+.dishoftheday .apiwalidiv {
+    font-family: 'GT America Standard';
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.dishoftheday .apiwalidiv h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.dishoftheday .apiwalidiv p {
+    margin: 0.5rem 0;
+}
+
+.dishoftheday .apiwalidiv a {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #95c11e;
+    color: #0D3A25;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dishoftheday .apiwalidiv a:hover {
+    background-color: #7ba414;
+    transform: translateY(-3px);
+}
+
+.page2 {
+    width: 100%;
+    background-color: #F1F9DC;
+    margin: 0;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+/* Search Bar and Buttons Styling */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    position: relative;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 0.8rem 2.5rem 0.8rem 0.8rem;
+    font-size: 0.9rem;
+    border: 2px solid #738F77;
+    border-radius: 10px;
+    outline: none;
+    color: #0D3A25;
+    background-color: #F1F9DC;
+    font-style: normal;
+    font-family: 'GT America Mono';
+    width: 30vw;
+}
+
+.search-icon {
+    position: absolute;
+    right: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+    color: #0D3A25;
+    font-style: normal;
+    font-family: 'GT America Mono';
+}
+
+.search-icon:hover {
+    color: #325009;
+}
+
+.search-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.search-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #0D3A25;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-style: normal;
+    font-size: 0.9rem;
+    font-family: 'GT America Mono';
+    width: 8rem;
+    text-align: center;
+}
+
+.search-button:hover {
+    background-color: #325009;
+}
+
+/* Styles for the API response display */
+#results {
+    margin-top: 2rem;
+    padding: 0 2rem;
+}
+.result-item {
+    background-color: #0D3A25;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #F1F9DC;
+    font-family: 'GT America Standard';
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.result-item img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 1.5rem;
+}
+.result-text {
+    flex: 1;
+}
+.result-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: 'GT America Dark';
+    font-weight: 900;
+}
+.result-text p {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+.view-recipe-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #95c11e;
+    color: #0D3A25;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.view-recipe-button:hover {
+    background-color: #7ba414;
+    transform: translateY(-3px);
 }
