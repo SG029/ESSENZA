@@ -135,185 +135,86 @@ body::-webkit-scrollbar {
     position: absolute;
     transform: translateX(-20%);
 }
-
-.hero {
+#hero{
     height: 85vh;
     width: 100%;
-    position: relative;
     background-color: #F1F9DC;
-    overflow: hidden;
-}
+    position: relative;
 
-.hero p {
+}
+#hero p{
     font-family: "GT America Mono";
     font-style: normal;
+    font-weight: 900;
     text-align: center;
     font-size: 1rem;
-    top: 10%;
     position: absolute;
-    left: 50%;
+    top:10%;
+    left:50%;
     transform: translateX(-50%);
-    font-weight: 900;
 }
 
-.hero h1 {
+#hero h1{
     font-family: "GT America Dark";
     font-style: normal;
+    font-weight: 900;
     text-align: center;
-    font-size: 6rem;
+    font-size:  6rem;
     position: absolute;
-    left: 50%;
+    top:20%;
+    left:50%;
     transform: translateX(-50%);
-    top: 20%;
 }
-
-.hero h4 {
+#hero h4{
     font-family: "GT America Standard";
     font-style: normal;
+    font-weight: 900;
     text-align: center;
-    font-size: 1.5rem;
+    font-size:  1.5rem;
     position: absolute;
-    left: 50%;
+    /* top:20%; */
+    left:50%;
     transform: translateX(-50%);
-    font-weight: 100;
-    top: 45%;
+    bottom: 20%;
 }
 
-.hero img {
-    position: absolute;
-    width: 60rem;
-    height: auto;
-    bottom: -15%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* Page 2 Styling */
-#page2 {
+#page2{
     width: 100%;
     height: 100vh;
-    position: relative;
     background-color: #F1F9DC;
+    position: relative;
 }
-
-#page2 #inner {
+#viddiv {
     width: 80%;
-    position: absolute;
-    border-radius: 20px;
     height: 80%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #0D3A25;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-#page2 #inner #left {
-    width: 40%;
-    height: auto; /* Adjust height to fit content */
-    /* background-color: rebeccapurple; */
-    padding: 20px; /* Add some padding for spacing */
-    text-align: start;
-    margin-left: 30px; /* Add margin-left to create space on the left */
-}
-
-#page2 #inner #left h1 {
-    font-family: "GT America Dark";
-    font-style: normal;
-    font-size: 5rem;
-    color: #fff;
-    margin-bottom: 20px; /* Add margin to create space below the h1 */
-}
-
-#page2 #inner #left p {
-    font-family: "GT America Standard";
-    font-style: normal;
-    font-size: 1.5rem;
-    color: #fff; /* Add color to make the text visible */
-}
-
-#page2 #inner #right {
-    width: 40%;
-    height: auto; /* Adjust height to fit content */
     /* background-color: red; */
-    padding: 20px; /* Add some padding for spacing */
-    text-align: start;
-}
-
-#right {
-    width: 50%;
-    margin: auto; /* Center the form horizontally */
-    padding: 30px;
-    /* background-color: #F1F9DC; */
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    font-family: "GT America Standard";
-    font-style: normal;
-    text-align: center;
+    /* background: url('./aboutus/WhatsApp\ Video\ 2024-11-16\ at\ 01.36.17.mp4'); */
+    /* background-size: cover; /* Ensures the image covers the entire div */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+} */
+#viddiv {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    overflow: hidden; /* Ensures the video fits nicely within the div */
 }
 
-#right h1 {
-    font-family: "GT America Dark";
-    font-size: 2rem;
-    text-align: center;
-    color: #fff;
-    margin-bottom: 20px;
-}
-
-#right label {
-    font-family: "GT America Standard";
-    font-size: 1rem;
-    color: #0D3A25;
-    display: block;
-    margin-bottom: 5px;
-    margin-top: 15px;
-}
-
-#right input[type="number"],
-#right select {
-    width: calc(100% - 20px);
-    padding: 10px;
-    font-family: "GT America Standard";
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
-}
-
-#right input[type="number"]:focus,
-#right select:focus {
-    border-color: #738F77;
-    outline: none;
-}
-
-#right select {
-    cursor: pointer;
-    background-color: #fff;
-}
-
-#right button {
+#viddiv video {
     width: 100%;
-    padding: 15px;
-    font-family: "GT America Standard";
-    font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    background-color: #0D3A25;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire div */
+    border-radius: 15px;
 }
-
-#right button:hover {
-    background-color: #325009;
-}
-
 /* Footer Styling */
 #footer {
     background-color: #0D3A25;
@@ -408,4 +309,65 @@ body::-webkit-scrollbar {
     font-size: 0.9rem;
     color: #ccc;
 }
+/* Leadership Section */
+.leadership-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #F1F9DC; /* Light gray background */
+}
+.leadership-section h3{
+    font-family: "GT America Dark";
+    font-style: normal;
+    font-weight: 900;
+    text-align: center;
+    font-size:  6rem;
+}
 
+.leadership-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: nowrap; /* Prevents wrapping to the next line */
+    /* overflow-x: auto; Adds horizontal scrolling for small screens */
+}
+
+.profile-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.profile-card:hover {
+    transform: scale(1.05); /* Adds a subtle hover effect */
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.profile-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #004225; /* Dark green */
+    margin-bottom: 5px;
+}
+
+.profile-role {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.personality-tag {
+    font-size: 0.9rem;
+    color: #777;
+}

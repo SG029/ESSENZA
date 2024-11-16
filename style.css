@@ -247,6 +247,104 @@ body::-webkit-scrollbar {
     transition: all ease 0.2s;
 }
 
+
+/* Footer Styling */
+#footer {
+    background-color: #0D3A25;
+    color: #fff;
+    padding: 40px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-family: 'GT America Standard';
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    
+}
+
+.footer-section {
+    width: 22%;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.footer-section h2 {
+    font-family: 'GT America Dark';
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.footer-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #fff;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #95c11e;
+}
+
+#footer-contact p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+#footer-social .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+#footer-social .social-icons a img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+}
+
+#footer-social .social-icons a img:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #0D3A25;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+
+
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
     #nav {
