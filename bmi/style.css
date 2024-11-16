@@ -1,0 +1,315 @@
+/* Importing GT-America fonts from the assets folder */
+@font-face {
+    font-family: 'GT America Standard';
+    src: url('./GT-America-Standard-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Standard';
+    src: url('./GT-America-Standard-Medium.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Standard';
+    src: url('/assets/fonts/GT-America-Standard-Medium-Italic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'GT America Mono';
+    src: url('/assets/fonts/GT-America-Mono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Mono';
+    src: url('/assets/fonts/GT-America-Mono-Medium.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America Dark';
+    src: url('./National2Comp-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Set GT-America Standard as the main font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'GT America Standard';
+    color: #0D3A25;
+}
+#main {
+    background-color: #F1F9DC;
+}
+*::selection {
+    background-color: white;
+    color: #325009;
+}
+
+body::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    background-color: #95c11e;
+}
+
+/* Header Styling */
+#nav {
+    height: 15vh;
+    width: 100%;
+    background-color: #F1F9DC;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 50px;
+    z-index: 99;
+    font-style: normal;
+    font-size: 0.9rem;
+    font-family: 'GT America Mono';
+}
+
+#navleft, #navcentre, #navright {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    font-family: inherit;
+}
+
+#nav li {
+    list-style: none;
+}
+
+#nav li a {
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: 500;
+    color: #738F77;
+    transition: all 0.3s ease;
+}
+
+#nav li a:hover {
+    color: #325009;
+    transition: all 0.2s ease;
+}
+
+#nav #joinus {
+    padding: 1rem 3rem;
+    background-color: #0D3A25;
+    border: none;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+}
+
+#nav #joinus a {
+    color: white;
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+#nav #joinus:hover {
+    background-color: #325009;
+}
+
+#nav #joinus:hover a {
+    color: white;
+    transition: all ease 0.2s;
+}
+
+#navcentre img {
+    height: 4rem;
+    width: auto;
+    position: absolute;
+    transform: translateX(-20%);
+}
+
+.hero {
+    height: 85vh;
+    width: 100%;
+    position: relative;
+    background-color: #F1F9DC;
+    overflow: hidden;
+}
+
+.hero p {
+    font-family: "GT America Mono";
+    font-style: normal;
+    text-align: center;
+    font-size: 1rem;
+    top: 10%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 900;
+}
+
+.hero h1 {
+    font-family: "GT America Dark";
+    font-style: normal;
+    text-align: center;
+    font-size: 6.6rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+}
+
+.hero h4 {
+    font-family: "GT America Standard";
+    font-style: normal;
+    text-align: center;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 100;
+    top: 45%;
+}
+
+.hero img {
+    position: absolute;
+    width: 60rem;
+    height: auto;
+    bottom: -15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Page 2 Styling */
+#page2 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: #F1F9DC;
+}
+
+#page2 #inner {
+    width: 80%;
+    position: absolute;
+    border-radius: 20px;
+    height: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0D3A25;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#page2 #inner #left {
+    width: 40%;
+    height: auto; /* Adjust height to fit content */
+    /* background-color: rebeccapurple; */
+    padding: 20px; /* Add some padding for spacing */
+    text-align: start;
+    margin-left: 30px; /* Add margin-left to create space on the left */
+}
+
+#page2 #inner #left h1 {
+    font-family: "GT America Dark";
+    font-style: normal;
+    font-size: 5rem;
+    color: #fff;
+    margin-bottom: 20px; /* Add margin to create space below the h1 */
+}
+
+#page2 #inner #left p {
+    font-family: "GT America Standard";
+    font-style: normal;
+    font-size: 1.5rem;
+    color: #fff; /* Add color to make the text visible */
+}
+
+#page2 #inner #right {
+    width: 40%;
+    height: auto; /* Adjust height to fit content */
+    /* background-color: red; */
+    padding: 20px; /* Add some padding for spacing */
+    text-align: start;
+}
+
+#right {
+    width: 50%;
+    margin: auto; /* Center the form horizontally */
+    padding: 30px;
+    /* background-color: #F1F9DC; */
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: "GT America Standard";
+    font-style: normal;
+    text-align: center;
+}
+
+#right h1 {
+    font-family: "GT America Dark";
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+#right label {
+    font-family: "GT America Standard";
+    font-size: 1rem;
+    color: #0D3A25;
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+#right input[type="number"],
+#right select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-family: "GT America Standard";
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#right input[type="number"]:focus,
+#right select:focus {
+    border-color: #738F77;
+    outline: none;
+}
+
+#right select {
+    cursor: pointer;
+    background-color: #fff;
+}
+
+#right button {
+    width: 100%;
+    padding: 15px;
+    font-family: "GT America Standard";
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #0D3A25;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#right button:hover {
+    background-color: #325009;
+}
